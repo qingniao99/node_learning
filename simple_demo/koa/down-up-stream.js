@@ -5,7 +5,9 @@ var app = koa();
 
 app.use(function *(next){
     var start = new Date;
+    console.log(55555);
     yield next;
+    console.log(88888);
     var ms = new Date - start;
     this.set('X-Response-Time', ms + 'ms');
 });
@@ -16,6 +18,7 @@ app.use(function *(next){
     var start = new Date;
     console.log(66666);
     yield next;
+    console.log(77777);
     var ms = new Date - start;
     console.log(this.method + this.url + ms);
 });
